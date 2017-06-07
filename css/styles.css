@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+
+.container {
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  width: 60%;
+}
+
+h2 {
+  border: 1px black solid;
+  text-align: center;
+}
+
+.well {
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#listHeader {
+  text-align: center;
+}
