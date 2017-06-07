@@ -3,13 +3,10 @@ function add() {
   if($("#input").val() == "") {
     alert("Please enter a task!")
   } else {
-   $(".container").append("<div class = 'well' onclick= 'remove()'>" + $("#input").val())
+   $(".container").append("<div class = 'well'>" + $("#input").val());
   }
 }
 
-  //alert();
-
-
-function remove() {
-  alert("It will go soon");
-}
+$(document).on("click", ".well", function(){
+  $(this).fadeOut(function () {  $(this).remove();})
+});
