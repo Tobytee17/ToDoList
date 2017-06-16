@@ -7,7 +7,7 @@ function add() {
         listStorage.push($("#input").val().toLowerCase());
         console.log(listStorage);
         //run through if statement to determine if entry already exist
-        $(".empty").prepend("<div class = 'well'>" + $("#input").val());
+        $(".empty").prepend("<div class = 'well'>" + '<h3>' + $("#input").val() + '</h3>' + "<button type = 'button' class = 'btn' id ='closeBtn'> X </button" + "</div>");
         $("#input").val("");
     }
 }
@@ -37,15 +37,21 @@ function duplicateValidation() {
     }
 }
 
-//allows for the deletion of a specific div when it is clicked on
 $(document).on("click", ".well", function() {
+  $(this).css('text-decoration', 'line-through');
+  $(this).css('background-color', '#95a5a6');
+  $(this).children().css('background-color', '#95a5a6');
+});
+
+//allows for the deletion of a specific div when it is clicked on
+$(document).on("click", "#closeBtn", function() {
     for (var x in listStorage) {
-        if (listStorage[x] == $(this).html().toLowerCase()) {
+        if (listStorage[x] == $(this).siblings().html().toLowerCase()) {
             listStorage.splice(x, 1);
         }
     }
     //fade out animation on the clicked div
-    $(this).fadeOut(750, function() {
+    $(this).parent().fadeOut(750, function() {
         $(this).remove();
     })
     console.log(listStorage);

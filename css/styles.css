@@ -2,13 +2,17 @@ body {
   background-color: black;
 }
 
-.navbar {
-  border-radius: 0px;
+h4 {
+  padding: 20px;
 }
 
-.btn {
-  width: 100%;
-  margin-top: 10px;
+h3 {
+  font-size: 15px;
+  display: inline;
+}
+
+.navbar {
+  border-radius: 0px;
 }
 
 .container {
@@ -18,15 +22,16 @@ body {
   padding-bottom: 20px;
 }
 
-h4 {
-  padding: 20px;
-}
-
 .well {
   text-align: center;
   cursor: pointer;
   margin-bottom: 20px;
+  width: 100%;
   padding: 10px 0px 10px 0px;
+}
+
+.well:hover{
+  background-color: #bdc3c7;
 }
 
 .jumbotron {
@@ -34,6 +39,22 @@ h4 {
   padding: 10px 0px 10px 0px;
 }
 
+#addButton {
+  width: 100%;
+  margin-top: 10px;
+}
+
 #input {
   text-align: center;
+}
+
+#closeBtn {
+  float:right;
+  padding:3px;
+  background-color: inherit;
+  display: inline;
+}
+
+#closeBtn:focus {
+  outline: none;
 }
