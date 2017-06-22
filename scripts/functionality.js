@@ -12,6 +12,11 @@ function add() {
     }
 }
 
+
+$("#addButton").click(function() {
+
+})
+
 //Check to see if input is blank
 function emptyValidation() {
     if ($("#input").val() == "") {
