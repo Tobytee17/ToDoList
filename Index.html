@@ -31,10 +31,8 @@
             <h1>To Do List:</h1>
             <h4>Click a task to cross it off!</h4>
          </div>
-         <form class="form-group">
-             <input type="text" class="form-control" placeholder="Enter task Here" id="input">
-             <button type="button" class="btn btn-primary" name="button" id="addButton" onclick="add();">Add</button>
-         </form>
+          <input type="text" class="form-control" placeholder="Enter task Here" id="input" onkeypress="enterKeyAdd();">
+          <button type="button" class="btn btn-primary" name="button" id="addButton" onclick="add();">Add</button>
          <div class="empty"></div>
     </div>
 
