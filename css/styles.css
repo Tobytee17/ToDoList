@@ -36,7 +36,8 @@ h1 {
 .well {
   text-align: center;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
   padding: 10px 0px 10px 0px;
 }
@@ -65,7 +66,6 @@ h1 {
   float:right;
   padding:3px;
   background-color: inherit;
-  display: inline;
   font-family: sans-serif;
 }
 
