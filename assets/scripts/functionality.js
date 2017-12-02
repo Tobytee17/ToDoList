@@ -1,3 +1,30 @@
+(function(){
+
+  const functionality = {
+
+    init: function() {
+      this.cacheDom();
+      this.eventBinds();
+    },
+
+    cacheDom: function() {
+      this.$el = $('#mainWrapper');
+      this.$form = this.$el.find("#formWrapper");
+    },
+
+    eventBinds: function() {
+      
+    },
+
+  };
+  functionality.init();
+})();
+
+
+
+
+
+/*
 var listStorage = [];
 
 //Calls all validation functions and if input passes, add item to the list
@@ -65,3 +92,4 @@ $(document).on("click", "#closeBtn", function() {
   })
   console.log(listStorage);
 });
+*/

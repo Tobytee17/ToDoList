@@ -5,37 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Bootstrap Includes-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--Personal Styles/scripts include -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="/scripts/functionality.js"></script>
-    <!--Webfont Include-->
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <title>To Do List</title>
+    <title>ToDo List</title>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">    
+    <!--Local includes -->
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/scripts/functionality.js"></script>
   </head>
   <body>
-    <!--Navbar -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">ToDo List</a>
-          </div>
-        </div>
-    </nav>
-    <!-- Main Body -->
-    <div class="container">
-        <div class="jumbotron">
-            <h1>To Do List:</h1>
-            <h4>Click a task to cross it off!</h4>
-         </div>
-          <input type="text" class="form-control" placeholder="Enter task Here" id="input" onkeypress="enterKeyAdd();" autocomplete="off">
-          <button type="button" class="btn btn-primary" id="addButton" onclick="add();">Add</button>
-         <div class="empty"></div>
-    </div>
-
-
+      <div class="container" id="mainWrapper">
+            <h1 class="title is-1">ToDo-List</h1>
+            <form class="field is-grouped container" id="formWrapper">
+                <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="Enter a task" required>
+                </p>
+                <p class="control" id="submitButon">
+                    <button class="button" type="submit">Add Item</button>
+                </p>
+            </form>
+      </div>
   </body>
 </html>

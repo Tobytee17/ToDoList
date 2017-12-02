@@ -8,7 +8,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 //Allow for static files (CSS/JS) to be used in the views
-app.use(express.static('./assets'));
+app.use(express.static('./'));
 
 //Pass the app the the controller
 todoController(app);
