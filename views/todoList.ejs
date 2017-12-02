@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--MetaData-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo List</title>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">    
+    <!--Local includes -->
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/assets/scripts/functionality.js"></script>
+  </head>
+  <body>
+      <div class="container" id="mainWrapper">
+            <h1 class="title is-1">ToDo-List</h1>
+            <form class="field is-grouped container"
+                <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="Enter a task" required autofocus>
+                </p>
+                <p class="control" id="submitButon">
+                    <button class="button" type="submit">Add Item</button>
+                </p>
+            </form>
+            <ul>
+                <% for(let i=0; i < todos.length; i++) { %>
+                    <li><%= todos[i].task; %></li>
+                <% } %>
+            </ul>
+      </div>
+  </body>
+</html>

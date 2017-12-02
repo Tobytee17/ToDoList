@@ -1,0 +1,44 @@
+body {
+  font-family: 'Abel', sans-serif;
+}
+
+li {
+  font-size: 20px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+li:hover {
+  cursor:pointer;
+  text-decoration: line-through;
+}
+
+li:focus {
+  text-decoration: line-through;
+}
+
+.field {
+  width: 50%;
+}
+
+#mainWrapper {
+  padding: 50px;
+  text-align: center;
+  padding-top:10%;
+}
+
+.input {
+  border-width: 0px 0px 1px 0px;
+  border-color: #bdc3c7;
+  outline:none;
+  box-shadow:none;
+  border-radius: 0px;
+}
+
+.input:focus {
+  border-color: #3498db;
+  outline:none;
+  box-shadow:none;
+}
+
+

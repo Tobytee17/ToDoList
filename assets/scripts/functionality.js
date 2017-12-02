@@ -1,3 +1,57 @@
+$(document).ready(
+  function(){
+    
+      const functionality = {
+    
+        init: function() {
+          this.cacheDom();
+          this.eventBinds();
+        },
+    
+        cacheDom: function() {
+          this.$el = $('#mainWrapper');
+          this.$form = this.$el.find("form");
+          this.$input = this.$el.find("input")
+          this.$item = this.$el.find("li");
+        },
+    
+        eventBinds: function() {
+          functionality.$form.on("submit", functionality.submitData);
+          functionality.$item.on("click", functionality.deleteItem);
+        },
+    
+        submitData: function() {
+          let todo = {task: functionality.$input.val()};
+          $.ajax({
+            type: 'POST',
+            url: '/',
+            data: todo,
+            success: function(data){
+              //Dynamic re-rendering will be implemented here soon!
+              location.reload();
+            }
+          });
+          return false;
+        },
+
+        deleteItem: function() {
+          let task = $(this).text().replace(/ /g, "-");
+          $.ajax({
+            type: 'DELETE',
+            url: '/' + task,
+            success: function(data){
+              location.reload();
+            }
+          });
+        }
+      };
+
+      
+      functionality.init();
+    });
+
+
+/*
 var listStorage = [];
 
 //Calls all validation functions and if input passes, add item to the list
@@ -65,3 +119,4 @@ $(document).on("click", "#closeBtn", function() {
   })
   console.log(listStorage);
 });
+*/
