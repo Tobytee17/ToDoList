@@ -1,28 +1,39 @@
-(function(){
-
-  const functionality = {
-
-    init: function() {
-      this.cacheDom();
-      this.eventBinds();
-    },
-
-    cacheDom: function() {
-      this.$el = $('#mainWrapper');
-      this.$form = this.$el.find("#formWrapper");
-    },
-
-    eventBinds: function() {
-      
-    },
-
-  };
-  functionality.init();
-})();
-
-
-
-
+$(document).ready(
+  function(){
+    
+      const functionality = {
+    
+        init: function() {
+          this.cacheDom();
+          this.eventBinds();
+        },
+    
+        cacheDom: function() {
+          this.$el = $('#mainWrapper');
+          this.$form = this.$el.find("form");
+          this.$input = this.$el.find("input")
+        },
+    
+        eventBinds: function() {
+          functionality.$form.on("submit", functionality.submitData);
+        },
+    
+        submitData: function() {
+          let todo = {task: functionality.$input.val()};
+          $.ajax({
+            type: 'POST',
+            url: '/',
+            data: todo,
+            success: function(data){
+              //Dynamic re-rendering will be implemented here soon!
+              location.reload();
+            }
+          });
+          return false;
+        },
+      };
+      functionality.init();
+    });
 
 /*
 var listStorage = [];
