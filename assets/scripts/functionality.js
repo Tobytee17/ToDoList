@@ -12,10 +12,12 @@ $(document).ready(
           this.$el = $('#mainWrapper');
           this.$form = this.$el.find("form");
           this.$input = this.$el.find("input")
+          this.$item = this.$el.find("li");
         },
     
         eventBinds: function() {
           functionality.$form.on("submit", functionality.submitData);
+          functionality.$item.on("click", functionality.deleteItem);
         },
     
         submitData: function() {
@@ -31,9 +33,23 @@ $(document).ready(
           });
           return false;
         },
+
+        deleteItem: function() {
+          let task = $(this).text().replace(/ /g, "-");
+          $.ajax({
+            type: 'DELETE',
+            url: '/' + task,
+            success: function(data){
+              location.reload();
+            }
+          });
+        }
       };
+
+      
       functionality.init();
     });
+
 
 /*
 var listStorage = [];

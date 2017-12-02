@@ -14,12 +14,12 @@ const todoListSchema = new mongoose.Schema({
 })
 
 //Model creation for the DB
-const model = mongoose.model('todo', todoListSchema);
+const TodoModel = mongoose.model('todo', todoListSchema);
 
 //Router that is exported to the main app
 module.exports = function(app) {
     app.get('/', function(req, res) {
-        model.find({}, function(err, data) {
+        TodoModel.find({}, function(err, data) {
             if(err) throw err;
             res.render('todoList', {todos: data});
         });
@@ -27,8 +27,15 @@ module.exports = function(app) {
 
     app.post('/', urlEncodedParser, function(req, res) {
         //Takes the posted data and forwards it to MongoDB
-        let newToDo = model(req.body).save(function(err, data) {
+        let newToDo = TodoModel(req.body).save(function(err, data) {
             //Logs the error if one is to occur
+            if(err) throw err;
+            res.json(data);
+        });
+    });
+
+    app.delete('/:task', urlEncodedParser, function(req, res) {
+        TodoModel.find({task: req.params.task.replace(/\-/g, " ")}).remove(function(err, data) {
             if(err) throw err;
             res.json(data);
         });

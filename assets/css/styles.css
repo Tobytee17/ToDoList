@@ -2,6 +2,21 @@ body {
   font-family: 'Abel', sans-serif;
 }
 
+li {
+  font-size: 20px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+li:hover {
+  cursor:pointer;
+  text-decoration: line-through;
+}
+
+li:focus {
+  text-decoration: line-through;
+}
+
 .field {
   width: 50%;
 }
